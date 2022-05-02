@@ -21,6 +21,7 @@ const Results = () => {
                 return ( <p key={index}>Vous êtes à {pourcentages[pourcKey]}/7 {pourcKey}</p> )
             })}
             
+            
         </div>
     );
 };

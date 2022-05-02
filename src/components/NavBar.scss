@@ -1,5 +1,4 @@
 .navbar {
-    width: calc(100% - 40px);
     height: 100px;
     background-color: #e60012;
     
@@ -7,7 +6,12 @@
     align-items: center;
     justify-content: space-between;
 
-    padding: 0 20px;
+    padding: 0 30px;
+
+    .part {
+        display: flex;
+        gap:20px;
+    }
 
     a {
         color: white;
