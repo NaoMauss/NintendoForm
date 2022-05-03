@@ -51,7 +51,7 @@ const Sender = () => {
                 <input placeholder='Envoyer un message...' ref={input} type="text" onChange={(e) => setInputValue(e.target.value)}/>
                 <button onClick={sendMessage} className='send'> <FontAwesomeIcon icon={faPlay} /> </button>
                 <button onClick={preSetGif} className='gif'> <FontAwesomeIcon icon={faFilm} /> </button>
-                <button onClick={(e) => {e.preventDefault();deleteAllInCollection('messages')}} className='gif'> <FontAwesomeIcon icon={faFilm} /> E </button>
+                {/* <button onClick={(e) => {e.preventDefault();deleteAllInCollection('messages')}} className='gif'> <FontAwesomeIcon icon={faFilm} /> E </button> */}
             </form>
         </>
     );

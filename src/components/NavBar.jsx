@@ -6,13 +6,21 @@ import { auth } from '../scripts/firebase';
 const NavBar = () => {
     return (
         <div className='navbar'>
+            {auth.currentUser ? 
+
             <div className="part left">
-                <a href="/">HOME</a>
+                <a href="/">Profil</a>
+            </div>
+            :
+            null
+            }
+            <div className="mille">
+                N
             </div>
             <div className="part right">
                 {auth.currentUser ? 
                 <>
-                <NavLink to='/ChatRoom'>Message</NavLink>
+                <NavLink to='/ChatRoom'>ChatRoom</NavLink>
                 </>
                 :    
                 <NavLink to='/Login'>Login</NavLink>

@@ -43,26 +43,27 @@ export const deleteAllInCollection = async (path) => {
     })
 }
 
+export const deleteUserDocument = async () => {
+    return new Promise(async (resolve) => {
+        const res = await firestore.collection('userInfo').doc(auth.currentUser.uid).delete();
+        console.log("c'est supprimé")
+        resolve()
+    })
+}
+
 export const getTime = () => {
     return firebase.firestore.Timestamp.now().toDate();
 };
 
 export const getUserData = () => {
     return new Promise((resolve, reject) => {
-        const userData = firestore.collection('userData');
+        const userData = firestore.collection('userInfo');
         userData.doc(auth.currentUser.uid).get().then(data => {
             try {
-                console.log('on est dedans')
-                if (data.data()) {
-                    console.log('il y a des données')
-                    if (Object.keys(data.data()).length === 0) {
-                        throw 'error';
-                    }
-                    resolve([true, data.data()])
-                } else {
-                    console.log('rien', data, data.data())
-                    throw 'error';
-                }
+                if (Object.keys(data.data()).length === 0) throw 'error';
+                if (!data.data().valid) throw 'error';
+                // Vérifier si il y a bien une donnée particulière
+                resolve([true, data.data()])
             } catch {
                 resolve([false, null]);
             }
@@ -70,8 +71,15 @@ export const getUserData = () => {
     })
 }
 
-export const setData = () => {
-    const userInfoRef = firestore.collection('userInfo');
-    const userRef = userInfoRef.doc(auth.currentUser.uid);
-    setDoc(userRef, {coucou:'null'}, {merge: true})
+export const setData = (datas) => {
+    return new Promise(async (resolve) => {
+
+        const userInfoRef = firestore.collection('userInfo');
+        const userRef = userInfoRef.doc(auth.currentUser.uid);
+        setDoc(userRef, datas, {merge: true})
+        setTimeout(() => {
+            resolve()
+        }, 1000);
+    })
+
 }
