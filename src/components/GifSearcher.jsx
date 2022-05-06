@@ -5,7 +5,7 @@ import Gif from './Gif';
 
 const GifSearcher = (props) => {
     const {gifVisible, setGifVisible} = props
-    const [gifs, setGifs] = useState({results:[]});
+    const [gifs, setGifs] = useState({results:[], type:''});
     const [inputValue, setInputValue] = useState('');
     const [allGifSaved, setAllGifSaved] = useState([]);
 
@@ -48,23 +48,26 @@ const GifSearcher = (props) => {
         console.log("debug 47", allGifSaved, typeof allGifSaved)
         let include = false
         let pass = []
-        for (let g of pass) {
-            if (newGif === g) {
+        for (let g of newAllGifSaved) {
+            if (newGif.content_description === g.content_description) {
+                console.log('remove')
                 include = true
-                
+            } else {
+                pass.push(g)
             }
         }
         if (!include) {
+            pass.push(newGif)
             console.log('add')
-            newAllGifSaved.push(newGif)
         }
-        localStorage.setItem("AllFavGif", JSON.stringify(newAllGifSaved))
-        setAllGifSaved(newAllGifSaved)
+        localStorage.setItem("AllFavGif", JSON.stringify(pass))
+        if (gifs.type === "fav") setGifs({results:pass, type:'fav'});
+        setAllGifSaved(pass)
     }
 
     const getFavs = () => {
         // On stocke allGifSaved dans gifs
-        setGifs({results:allGifSaved})
+        setGifs({results:allGifSaved, type:'fav'})
         // pq => On affiche gifs à l'écran, et on a les favs dans allGifSaved
     }
 
