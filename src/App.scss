@@ -8,7 +8,7 @@ $shadow-one: 0px 0px 10px rgba(0, 0, 0, 0.2);
 
 @keyframes appear {
     0% {
-        transform: translateX(50vw);
+        transform: translateX(100vw);
     }
     100% {
         transform: translateX(0);
@@ -16,7 +16,7 @@ $shadow-one: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 @keyframes appearBack {
     0% {
-        transform: translateX(-50vw);
+        transform: translateX(-100vw);
     }
     100% {
         transform: translateX(0);
@@ -457,7 +457,7 @@ body {
 
                 height: 100%;
                 .empty {
-                    color: $white-two;
+                    color: $back-three;
                     height: 100%;
                     display: grid;
                     place-items: center;
@@ -517,6 +517,15 @@ body {
                             display: block;
                         }
                     }
+                }
+                .fav{
+                    position: relative;
+                    bottom: 80px;
+                    background: none;
+                    border: none;
+                    padding: 0;
+                    cursor: pointer;
+                    outline: inherit;
                 }
             }
         }
