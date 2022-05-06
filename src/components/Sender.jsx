@@ -46,7 +46,7 @@ const Sender = () => {
     return (
         <>
             <GifSearcher gifVisible={gifVisible} setGifVisible={setGifVisible} />
-            <div className="user"> Envoyer en tant que {displayName} </div>
+            {/* <div className="user"> Envoyer en tant que {displayName} </div> */}
             <form className='sender' onSubmit={inputValue ? sendMessage : void 0}>
                 <input placeholder='Envoyer un message...' ref={input} type="text" onChange={(e) => setInputValue(e.target.value)}/>
                 <button onClick={sendMessage} className='send'> <FontAwesomeIcon icon={faPlay} /> </button>

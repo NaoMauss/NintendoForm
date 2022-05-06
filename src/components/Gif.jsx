@@ -3,7 +3,7 @@ import { auth, firestore } from '../scripts/firebase';
 
 const Gif = (props) => {
 
-    const {id, content_description, url, media, setGifVisible} = props;
+    const {content_description, media, setGifVisible} = props;
 
     const sendGif = async (e) => {
         e.preventDefault()
@@ -22,6 +22,12 @@ const Gif = (props) => {
         setGifVisible(false)
     }
 
+    const FavGif = [
+        {
+            content_description, media
+        }
+    ]
+
     return (
         <button onClick={sendGif} className='gif'>
             <div className="preview">
@@ -30,6 +36,7 @@ const Gif = (props) => {
             <div className="real">
                 <img src={media[0].gif.url} alt="gif" />
             </div>
+            
             <div className="title"> {content_description} </div>
         </button>
     );

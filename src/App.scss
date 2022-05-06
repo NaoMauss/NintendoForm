@@ -119,7 +119,6 @@ body {
                 }
                 &.DK {
                     background: center / contain no-repeat url(https://firebasestorage.googleapis.com/v0/b/nintenwho.appspot.com/o/Donkey-Kong-PNG-Transparent.png?alt=media&token=43143671-de01-4bd2-95ee-a115fc6d063f);
-                    
                 }
                 &.Kirby {
                     background: center / contain no-repeat url(https://firebasestorage.googleapis.com/v0/b/nintenwho.appspot.com/o/kirby-img.png?alt=media&token=7ccceb4c-2c13-4688-bb32-7826c0b96ced);
@@ -551,4 +550,15 @@ body {
         }
     }
 
+}
+
+.renseignements {
+    .choices {
+        display: flex;
+        flex-direction: column;
+
+        .choice {
+
+        }
+    }
 }
