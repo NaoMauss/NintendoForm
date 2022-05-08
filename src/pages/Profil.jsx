@@ -15,8 +15,8 @@ const Profil = (props) => {
 
 
     const usage = 100
-    const radius = 200
-    const donutThickness = 50
+    const radius = 160
+    const donutThickness = 30
 
     const data = [
         {
