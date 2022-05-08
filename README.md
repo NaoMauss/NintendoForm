@@ -14,6 +14,6 @@ Le composant ``<Message/>`` est un **composant réutilisable**.
 
 Le site est accessible à l'adresse **[www.nintenwho.web.app](https://nintenwho.web.app/)**.
 
-Une version mobil est accessible sur le Github [NintenWho-Phone](https://github.com/LouisRvlE/NintenWho-Phone).
+Une version mobile est accessible sur le Github [NintenWho-Phone](https://github.com/LouisRvlE/NintenWho-Phone).
 
 Nao Mausservey && Louis Réville.
