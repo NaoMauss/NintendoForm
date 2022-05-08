@@ -84,6 +84,36 @@ body {
         }
     }
 
+
+    .chart {
+        position: relative;
+        display: grid;
+        place-items: center;
+        .inner {
+            color: #393E46;
+            font-size: 30px;
+            font-weight: 700;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            img {
+                height: 75px;
+            }
+        }
+    }
+    .pathpart {
+        filter: blur(0.1px);
+        transition: all 0.5s;
+        opacity: .7;
+        &:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+    }
+
+
     .datas {
         background: center / cover no-repeat url(https://firebasestorage.googleapis.com/v0/b/nintenwho.appspot.com/o/marioback.png?alt=media&token=6632dd49-c496-49ce-ae2e-4ef3cf4d17c1);
         width: 100%;
